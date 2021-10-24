@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
  *
  */
 @Service
-@Profile({"dev","default"})
+@Profile({"dev","default"})// valor por defecto sino se configura el perfil en el archivo application properties
 public class DevEnviroment implements IEnviromentService {
 
 	@Override
