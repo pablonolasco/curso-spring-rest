@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
  *
  */
 @Service
-@Profile("Qa")
+@Profile("qa")
 public class QaEnviroment implements IEnviromentService {
 
 	@Override

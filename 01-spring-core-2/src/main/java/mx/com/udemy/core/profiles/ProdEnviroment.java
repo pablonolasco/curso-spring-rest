@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
  *
  */
 @Service
-@Profile("Prod")
+@Profile("prod")
 public class ProdEnviroment implements IEnviromentService {
 
 	@Override
