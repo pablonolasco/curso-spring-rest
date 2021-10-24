@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Cuadrado implements IFigure {
 
-	@Value("8")
+	@Value("${cuadrado.lado}")
 	private Double lado1;
 	
 	@Override

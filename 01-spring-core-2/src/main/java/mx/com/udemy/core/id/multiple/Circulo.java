@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Circulo implements IFigure {
 	
-	@Value("14")
+	@Value("${circulo.radio:0}")
 	private Double radio;
 	
 	@Override
