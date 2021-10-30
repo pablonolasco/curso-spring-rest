@@ -9,19 +9,20 @@ import org.springframework.context.annotation.Bean;
 
 import mx.com.udemy.core.life.cycle.ExplicitBean;
 import mx.com.udemy.core.life.cycle.LifeCycle;
+import mx.com.udemy.core.life.cycle.LifeCycleInterfaces;
 
 @SpringBootApplication
 public class Application {
 
 	private static final Logger log = LoggerFactory.getLogger(Application.class);
 
-	@Bean(initMethod="init",destroyMethod="destroy")
+	/*@Bean(initMethod="init",destroyMethod="destroy")
 	public ExplicitBean getBean() {
 		return new ExplicitBean();
-	}
+	}*/
 	public static void main(String[] args) {
 		ApplicationContext applicationContext=SpringApplication.run(Application.class, args);
-		LifeCycle lifeCycle= applicationContext.getBean(LifeCycle.class);
+		//LifeCycleInterfaces lifeCycle= applicationContext.getBean(LifeCycleInterfaces.class);
 		//log.info(lifeCycle);
 	}
 

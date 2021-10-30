@@ -9,6 +9,7 @@ import javax.annotation.PreDestroy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -18,6 +19,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Scope("prototype")
+@Lazy
 public class LifeCycle implements BeanNameAware {
 	
 	private static final Logger log = LoggerFactory.getLogger(LifeCycle.class);

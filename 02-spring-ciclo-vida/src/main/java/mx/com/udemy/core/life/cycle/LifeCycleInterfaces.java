@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -19,6 +20,7 @@ import org.springframework.stereotype.Component;
  *
  */
 @Component
+@Lazy//(false) no se inicializara a menos que se inyecte
 public class LifeCycleInterfaces implements BeanNameAware,InitializingBean,DisposableBean {
 	
 	private static final Logger log = LoggerFactory.getLogger(LifeCycleInterfaces.class);
@@ -43,20 +45,20 @@ public class LifeCycleInterfaces implements BeanNameAware,InitializingBean,Dispo
 	 * solo se ejecutan durante una terminacion de la vm de forma normal
 	 */
 	@PreDestroy
-	public void destroy() {
+	public void destroyBean() {
 		log.info("Pre destruyendo");
 	}
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub InitializingBean
+		log.info("After properties set method");
 	}
 	
 	@Override
 	public void destroy() throws Exception {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub DisposableBean
+		log.info("d");
 	}
 
 }
